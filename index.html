@@ -1,0 +1,123 @@
+<html>
+    <head>
+        <title>Project 51</title>
+        <link rel="stylesheet" href="project 52.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <section class="main">
+            <header>
+                <a href="#"><img src="logo (2).png" class="logo" alt=""></a>
+                <div class="toggle"></div>
+                <ul class="nav">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Menu</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Servies</a></li>
+                </ul>
+            </header>
+            <div class="content">
+                <div class="text">
+                    <h2>Its Finger <br> Lickin <span>Goog.</span></h2>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat facere optio ipsa,
+                         minima maxime minus consequuntur sequi consequatur vero magnam,
+                         architecto iure pariatur asperiores ullam exercitationem soluta illum possimus 
+                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae nulla blanditiis
+                           sint aliquam magni tempora eligendi, soluta alias ad, 
+                         tenetur omnis repudiandae consequuntur rerum, tempore illo in molestiae dicta odio! culpa!</p>
+                         <a href="#" class="btn">Order Now</a>
+                </div>
+                <div class="slider">
+                    <div class="slides active">
+                        <img src="burger_fries.png" alt="">
+                    </div>
+                    <div class="slides">
+                        <img src="french_fries.png" alt="">
+                    </div>
+                    <div class="slides">
+                        <img src="fried_chicken.png" alt="">
+                    </div>
+                    <div class="slides">
+                        <img src="burger.png" alt="">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="footer">
+                <ul class="sci"> 
+                    <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+                    <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+                    <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+                </ul>
+                <div class="prevNext">
+                    <p>Alwes Fresh</p>
+                    <span class="prev"><ion-icon name="chevron-back-outline"></ion-icon></span>
+                    <span class="next"><ion-icon name="chevron-forward-outline"></ion-icon></span>
+                </div>
+            </div>
+
+
+        </section>
+
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+        <script>
+
+
+            // toggle
+            
+            const menutoggle = document.querySelector('.toggle');
+            menutoggle.onclick = function(){
+                menutoggle.classList.toggle('active')
+            }
+
+
+
+
+
+
+            const slides = document.querySelectorAll('.slides');
+            const prev = document.querySelector('.prev');
+            const next = document.querySelector('.next');
+
+            i = 0;
+
+            function ActiveSlide(n){
+                for(slide of slides)
+                slide.classList.remove('active');
+                slides[n].classList.add('active');
+            }
+
+
+            next.addEventListener('click' , function(){
+                if (i == slides.length-1) {
+                    i = 0;
+                    ActiveSlide(i);
+                }
+                else
+                {
+                    i++;
+                    ActiveSlide(i);
+                }
+            })
+
+
+            prev.addEventListener('click' , function(){
+                if (i == 0) {
+                    i = slides.length-1;
+                    ActiveSlide(i);
+                }
+                else
+                {
+                    i--;
+                    ActiveSlide(i);
+                }
+            })
+            
+        </script>
+        
+    </body>
+</html>
